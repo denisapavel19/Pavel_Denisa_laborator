@@ -19,5 +19,7 @@ namespace Pavel_Denisa_laborator.Data
         public DbSet<Pavel_Denisa_laborator.Models.Publisher>? Publisher { get; set; }
 
         public DbSet<Pavel_Denisa_laborator.Models.Author>? Author { get; set; }
+
+        public DbSet<Pavel_Denisa_laborator.Models.Category>? Category { get; set; }
     }
 }
