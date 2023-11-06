@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Pavel_Denisa_laborator.Data;
 
@@ -11,9 +12,10 @@ using Pavel_Denisa_laborator.Data;
 namespace Pavel_Denisa_laborator.Migrations
 {
     [DbContext(typeof(Pavel_Denisa_laboratorContext))]
-    partial class Pavel_Denisa_laboratorContextModelSnapshot : ModelSnapshot
+    [Migration("20231106180832_Author")]
+    partial class Author
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
