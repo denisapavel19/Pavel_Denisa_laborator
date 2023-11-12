@@ -13,7 +13,13 @@ namespace Pavel_Denisa_laborator.Data
             : base(options)
         {
         }
-
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Book>()
+                .HasOne(e => e.Borrowing)
+            .WithOne(e => e.Book)
+                .HasForeignKey<Borrowing>("BookID");
+        }
         public DbSet<Pavel_Denisa_laborator.Models.Book> Book { get; set; } = default!;
 
         public DbSet<Pavel_Denisa_laborator.Models.Publisher>? Publisher { get; set; }
@@ -21,5 +27,9 @@ namespace Pavel_Denisa_laborator.Data
         public DbSet<Pavel_Denisa_laborator.Models.Author>? Author { get; set; }
 
         public DbSet<Pavel_Denisa_laborator.Models.Category>? Category { get; set; }
+
+        public DbSet<Pavel_Denisa_laborator.Models.Member>? Member { get; set; }
+
+        public DbSet<Pavel_Denisa_laborator.Models.Borrowing>? Borrowing { get; set; }
     }
 }
